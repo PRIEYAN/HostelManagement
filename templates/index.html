@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+{%endblock%}
+
+{% block body %}
+<div id="fullnav">
+    <img src="/static/src/citlogo.png" id="logo" alt="CIT" height="30px" width='auto' >
+<div id="nav" >
+    <ul>
+                <li><a id="a2" href="#">Report</a></li>
+                <li><a id="a1"  href="#">Enquires</a></li>
+                <li><a id="a2" href="#">Contact</a></li>
+                <li><a id="a1" href="#">Home</a></li>
+    
+</ul>
+
+</div>
+</div>
+
+<div id="maincontent" >
+<div id="content" >
+    <div id="amaravathi" > <br>
+        <h1>AMARAVATHI HOSTEL</h1>  <br><br><br>  
+
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="/static/src/clg1.webp" style="width:100%">
+      <div class="text">1</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="/static/src/clg2.jpeg" style="width:100%">
+      <div class="text">2</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="/static/src/clg3.jpg" style="width:100%">
+      <div class="text">3</div>
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+    <br>
+<br>    
+    <div id="details" >
+        <div id="details-container" >
+
+        <dl>
+            <dt><b>Details : </b></dt>
+            <dd><b>&emsp;Total Floors :</b>9 floors in total</dd>
+            <dd><b>&emsp;Room Type :</b>First 4 floors contain air-conditioned rooms. <br></dd>
+                         <dt> </dt> <dd>&emsp; &emsp; &emsp; &emsp; &emsp; &nbsp;Remaining 5 floors have non-air-conditioned rooms.</dd>
+            <dd><b>&emsp;Water Supply : </b>24/7 water supply available.</dd>
+            <dd><b>&emsp;Internet Access:</b>All floors provide internet with an average speed of 25 Mbps.</dd>
+            <dd><b>&emsp;Electricity:</b>24/7 electricity is provided throughout the building.</dd>
+        </dl>
+</div>
+    </div><br><br>
+
+
+    </div>
+    
+    </div>
+
+
+</div>
+
+
+
+<div id="query" >
+ <ul>
+    <li><a href="#">Problems</a></li>
+    <li><a href="#">Enquires</a></li>
+    <li><a href="#">Clean</a></li>
+    <li><a href="#">Water</a></li>
+ </ul>
+
+</div>
+
+<div id="info" >
+    <div class="info-container">
+
+<h2>Information : </h2><br>
+<p>This platform is designed specifically for the students residing in Amaravathi Hostel. Our aim is to ensure a comfortable and safe living environment for all residents. <br>
+
+    If you encounter any difficulties or issues during your stay, please feel free to report them here. This includes, but is not limited to: <br>
+    
+    Room or Floor Issues: If you notice any damages in your room or common areas, please let us know. <br>
+    Internet Connectivity: For any problems related to internet access, such as slow speeds or complete outages, we want to hear from you. <br>
+    Hot Water Supply: If you are experiencing issues with the hot water supply, please report it immediately. <br>
+    Your concerns will be addressed promptly, and we will take necessary actions to resolve them as quickly as possible. 
+    <br>
+    Additionally, your safety and well-being are our top priorities. If you ever feel unsafe, experience harassment, or have any personal belongings stolen, please inform your wardens right away. They are here to support you and will take the necessary steps to ensure your security.
+    <br>
+    Thank you for helping us maintain a positive living environment!
+    
+    </p></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+{%endblock%}
