@@ -5,32 +5,46 @@
 }
 body{
     background-color: rgb(207, 207, 207)    ;
+    background-image: url(/static/src/sr25ab4b14863aws3.gif);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    margin: 1px;
 }
 #fullnav {
-    background-color: rgba(82, 82, 82, 0.404);
-    padding: 30px;
+    opacity: 100px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    margin: 1px;
 }
 #nav ul li {
-    display: inline;
-    justify-content: space-between;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 #nav ul li a{
-    margin-top: -40px;
+    color: white;
     width: auto;
     text-align: center;
     padding: 20px;
     text-decoration: none;
     text-transform: none;
-    float: right;
     transition: 0.1s;
-    color: rgb(0, 0, 0);
     font-size: 20px;
     font-weight: 500;
     font-family: "Saira Condensed", sans-serif;
 }
 #nav ul li a:hover{
-    background-color: rgb(133, 133, 133);
-    transform:scaleX(1.12);
+    transform:scaleX(1.22);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.8px);
+    -webkit-backdrop-filter: blur(8.8px);
 }
 #dropbtn{
     float: left;
@@ -52,12 +66,13 @@ body{
     max-width: 3000px;
 }
 #content{
-    background-color: rgba(58, 58, 58, 0.274);
     height: 900px;
     width: auto;
-    margin: 50px;
     box-shadow: inset 0px 0px 50px 0px black;
-    border-radius: 10px;
+    background: rgba(254, 254, 254, 0.24);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 #maincontent h1{
     margin-top: 100px;
@@ -166,6 +181,7 @@ img {vertical-align: middle;}
     text-align: center;
     justify-content: space-between;
     padding: 50px;
+    margin: 1px;
 }
 #query ul li{
     display: inline;
@@ -174,30 +190,36 @@ img {vertical-align: middle;}
     text-decoration: none;
     font-size: 25px;
     font-weight: 500;
-    height: 20px;
-    width: 20px;
-    border-radius: 30px;
-    margin: 150px;
+    border-radius: 10px;
+    margin: 100px;
     padding: 30px;
-    background-color: rgb(85, 85, 85);
     color: white;
     font-family: "Exo 2", sans-serif;
-    transition: 0.5s;
+    transition: 0.5s; 
+    font-weight: 900;
+
+
+    box-shadow: inset 0 0 0 0 #ff0000;
+    color: #ffffff;
+    transition: color .5s ease-in-out, box-shadow .5s ease-in-out;
 }
 #query ul li a:hover{
-    background-color: #2b2b2b;
-    box-shadow: 0px 0px 50px 0px rgb(32, 32, 32);
+    box-shadow: inset 0 -10px 0 0 #ff8800;
+    color: rgb(255, 255, 255);
 }
 #info{
-    border: 2px black double;
     font-family: "Questrial", sans-serif;
     font-size: 25px;
-    background-color: rgba(80, 80, 80, 0.507);
     padding: 70px;
     display: flex;
     margin: 20px;
-    box-shadow: inset 0px 0px 50px 0px black;
     border-radius: 10px;
+    background: rgba(254, 254, 254, 0.24);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
 }
 
 
