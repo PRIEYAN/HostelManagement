@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+<nav>
+    <ul>
+        <li><a href="#main1">Home</a></li>
+        <li><a href="">About us</a></li>
+        {% if auth %}
+        <li style="float: right;" ><a href="/"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+    {% else %}
+        <li><a href="/login">Login</a></li>
+    {% endif %}
+        <li><a href="#main2content">Queries</a></li>
+    </ul>
+</nav>
+<br><br><br><br>
+
+<div id="main1">    
+    <div id="main1content">
+        <h1>AMARAVATHI</h1>
+    </div>
+</div>
+<div id="main2">
+    <div id="main2content">
+        <div id="dropcon">
+            <br><br>
+            <h2>What happened?!</h2><br><br>
+            <a href="">Water leak</a>
+            <a href="">Floor problems</a>
+            <a href="">Room problems</a>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+<footer>
+    <p>&copy; 2024 copyright: VerumWeb</p>
+</footer>
+
+{% endblock %}

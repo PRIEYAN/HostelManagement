@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+}html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #333;
+}
+
+/*navbar*/
+nav{
+    background-color: #222;
+    font-size: 1.5vh;
+    position: fixed;
+    width: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+nav ul li{
+    display: inline-flex;
+    justify-content: space-around;
+}
+nav ul li a{
+    text-decoration: none;
+    color: aliceblue;
+    padding: 30px;
+    transition: 0.1s;
+}
+nav ul li a:hover{
+    background-color: #555;
+}
+/*firstmain*/
+#main1 {
+    text-align: center;
+    height: 80vh;
+    background: url('src/main.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aliceblue;
+    font-size: 6vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+#main2{
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aliceblue;
+    font-size: 4vw;
+    position: relative;
+    z-index: 2;
+}
+#main2content{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: 0.1ms;
+    margin: 30px;
+}
+#main2content i{
+    padding: 2vh;
+    position: relative;
+}
+#dropcon a{
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: #222;
+    padding: 30px;
+    margin: 10px;
+    color: white;
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#dropcon a:hover{
+    background-color: #555;
+    color: white;
+}
+footer{
+    padding: 1vw;
+    text-align: center;
+    background-color: #222;
+    color: #666;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif   ;
+    font-size: 1vw;
+}
+
+
+@media screen and (max-width: 650px) {
+    #main1 {
+        background-attachment: scroll; 
+        height: 70vw;
+    }
+    #dropcon a{
+        padding: 5px;
+        font-size: 20px;
+        display: block;
+    }
+    #main2{
+        height: 40vh;
+    }
+    
+}

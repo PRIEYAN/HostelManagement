@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="background"></div> <!-- Blurred background layer -->
+<div class="container"> 
+    <form action="/login" method="post">
+        <div id="form">
+            <center><h1>Login</h1></center><br>
+            <input type="text" name="username" placeholder="Enter your name"><br>
+            <input type="email" name="email" placeholder="Enter your college mail ID"><br>
+            <input type="password" name="password" placeholder="Enter your password"><br>
+            {% if message %}
+            <p style="color: red;">{{ message }}</p>  
+        {% endif %}
+            <input type="submit" onclick="/" value="Login">
+        </div>
+    </form>
+</div>
+{% endblock %}
