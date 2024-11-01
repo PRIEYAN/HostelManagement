@@ -14,22 +14,30 @@ class User(db.Model):
     email = db.Column(db.String(50), nullable=False)
     password = db.Column(db.String(20), nullable=False)
 
-# Initialize database and add a user if needed
+
+
+
 with app.app_context():
-    db.create_all()  # Ensures tables are created
+    db.create_all()  
     #sample data in database
     new_user = User(username="prieyan", email="prieyan@gmail.com", password="12345")
-    
+
     db.session.add(new_user)
     db.session.commit()
 
-# Main route
+
+
+# Main route and other route
 @app.route('/')
 def main():
-    auth = session.get('user_id') is not None  # Check if user is logged in
+    auth = session.get('username')                  # Check if user is logged in
     return render_template('index.html', auth=auth)
 
-
+@app.route('/roomProblem')
+def roomProblem():
+    auth=session.get('username') is not None
+    username=session.get('username')
+    return render_template('roomProblem.html',auth=auth,username=username)
 
 # Login route
 @app.route('/login', methods=['POST', 'GET'])
@@ -41,12 +49,25 @@ def login():
         user = User.query.filter_by(username=username, email=email, password=password).first()
         
         if user:
-            session['user_id'] = user.userid 
+            session['username'] = user.username 
             return redirect(url_for('main'))  
         else:
             message = "Invalid credentials. Please try again."
             return render_template('login.html', message=message)
     return render_template('login.html')
+
+
+
+
+
+
+@app.route('/logout', methods=['GET'])
+def done():
+    session.pop('username', None)  
+    return redirect(url_for('main'))
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

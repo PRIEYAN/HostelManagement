@@ -11,10 +11,10 @@
         <li><a href="#main1">Home</a></li>
         <li><a href="">About us</a></li>
         {% if auth %}
-        <li style="float: right;" ><a href="/"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-    {% else %}
-        <li><a href="/login">Login</a></li>
-    {% endif %}
+            <li style="float: right;" ><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+        {% else %}
+            <li style="float: right;" ><a href="/login">Login</a></li>
+        {% endif %}
         <li><a href="#main2content">Queries</a></li>
     </ul>
 </nav>
@@ -32,7 +32,7 @@
             <h2>What happened?!</h2><br><br>
             <a href="">Water leak</a>
             <a href="">Floor problems</a>
-            <a href="">Room problems</a>
+            <a href="/roomProblem">Room problems</a>
         </div>
     </div>
 </div>

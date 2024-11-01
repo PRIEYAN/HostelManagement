@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='rproblem.css') }}">
+{% endblock %}
+
+{% block body %}
+
+ <div id="main">
+    <p>Hello <b>{{username}}</b>, Welcome to the Report page! Here, you can let us know about any issues you're experiencing in your room. Rest assured, your information is kept confidential. Please avoid using inappropriate language </p>
+   <form action="" method="get" >
+        <ol type="1" >
+            <li>What is your room number?</li>
+        </ol>
+    </form>
+ </div>
+
+{% endblock %}
