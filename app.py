@@ -4,7 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///login.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = "FDSFSDSFDSHJFDSIFHDSFHDSIFH"
 db = SQLAlchemy(app)
 
 # Database model
@@ -21,7 +20,6 @@ with app.app_context():
     db.create_all()  
     #sample data in database
     new_user = User(username="prieyan", email="prieyan@gmail.com", password="12345")
-
     db.session.add(new_user)
     db.session.commit()
 
@@ -30,14 +28,17 @@ with app.app_context():
 # Main route and other route
 @app.route('/')
 def main():
-    auth = session.get('username')                  # Check if user is logged in
+    auth = session.get('username')                  
     return render_template('index.html', auth=auth)
 
 @app.route('/roomProblem')
 def roomProblem():
     auth=session.get('username') is not None
-    username=session.get('username')
-    return render_template('roomProblem.html',auth=auth,username=username)
+    if auth:
+        username=session.get('username')
+        return render_template('roomProblem.html',auth=auth,username=username)
+    else:
+        return render_template('login.html')
 
 # Login route
 @app.route('/login', methods=['POST', 'GET'])
@@ -50,10 +51,10 @@ def login():
         
         if user:
             session['username'] = user.username 
-            return redirect(url_for('main'))  
+            return redirect(url_for('main') )  
         else:
             message = "Invalid credentials. Please try again."
-            return render_template('login.html', message=message)
+            return render_template('login.html', message=message,)
     return render_template('login.html')
 
 
